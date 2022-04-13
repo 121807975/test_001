@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        交给spring来创建对象
+        【不是由程序员new对象
+        此操作等同于 new 对象
+
+        id ：创建对象的名称
+        class ：创建对象类型，底层反射对象
+     -->
+    <bean id="stu" class="org.example.Student">
+        <property name="name" value="zhangsan"></property>
+        <property name="sex" value="m"></property>
+        <property name="id" value="123"></property>
+    </bean>
+
+    <bean id="school" class="org.example.School">
+        <property name="name" value="qinhua"></property>
+        <property name="attr" value="difang"></property>
+        <property name="student" ref="stu"></property>
+    </bean>
+</beans>
